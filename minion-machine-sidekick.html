@@ -1,0 +1,165 @@
+<html>
+	<head>
+		<title>Polar Fudge Sidekick</title>
+		<style>
+				body {
+		 font-family: tahoma, arial, helvetica, sans-serif;
+			text-align: center;
+			color: #999;
+			padding: 1em;
+			font-size:12px;
+		}
+
+
+		#main {
+			text-align: left;
+			width: 500px;
+			xmargin: auto;
+		  }
+
+		#main h1 {
+			font-size: 2.0em;
+			font-weight: normal;
+			
+		} 
+		#main input.result{
+		 font-size: 2.0em;
+		 color: #999;
+		 background-color:#eee;
+		  border:solid;
+		  text-align:center;
+		}
+
+		#main label {
+			font-size: 2.0em;
+			padding-bottom: 10px;
+			display:inline-block;
+			margin-right:10px;
+		}
+
+		#main #resultAreaDice{
+		 width: 80px;
+		 margin-right: 15px;
+		display: inline-block; 
+		}
+
+		#main .equalSign {
+			font-size: 3.0em;
+			color: #999;
+		}	
+
+		#main #resultAreaInitiative {
+			width: 50px;
+			display: inline-block;
+		}
+
+		#main #resultAreaTotal{
+			width: 50px;
+			text-align:center;
+		}
+		#main input.button {
+			margin-top:15px;
+		}
+
+
+		.button {
+			background-color: #fff; color: #000;
+			color: #999;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 2.0em;
+			margin-right: 10px;
+		}
+
+		.select {
+			background-color: #eee; color: #000;
+			border: #999 3px solid;
+			color: #999;
+			padding: 5px 20px;
+			text-decoration: none;
+			font-size: 2.0em;
+			text-align:center;
+			margin-right: 10px;
+		}
+
+		.select.option {
+			color: #999;
+		}
+
+		.inputText {
+			background-color: #eee; color: #000;
+			border: none;
+			color: #999;
+			padding: 5px 20px;
+			text-decoration: none;
+			display: block;
+			font-size: 2.0em;
+		}
+		.inputArea{
+			xxbackground-color: #eee; color: #000;
+			border: none;
+			color: #999;
+			padding: 5px 20px;
+			padding: 0px;
+			text-decoration: none;
+			display: block;
+			font-size: 2.0em;	
+			 color: #999;
+		}	
+</style>
+
+	</head>
+	<body>
+		<div id="main">
+		<h1>Polar Fudge Sidekick</h1>
+			<form id="initiativeForm" action="">
+				<input class="button" type="button" value="Roll D6" onclick="rollInitiative();">
+				<input type="text" value="" id="resultAreaInitiative" class="result" readonly="readonly">
+				
+          </form>  
+        <form id="fudgeDiceForm" action="">
+            <input class="button" type="button" value="Roll 4dF" onclick="roll();">
+            <input type="text" value="" id="resultAreaDice" class="result" readonly="readonly">
+			<span class="equalSign">=&nbsp;</span>
+            <input type="text" value="" id="resultAreaTotal" class="result" readonly="readonly">
+            
+        </form>
+		<form id="encounterForm" action="" >
+			<label>Players</label>
+				<select id="numberBH" class="select">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4"selected="selected" >4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+
+				
+					<label>Difficulty</label>
+					<select id="difficultySetting" class="select">
+						<option value=75 >Easy</option>
+						<option value=100 selected="selected">Normal</option>
+						<option value=125 >Hard</option>
+					</select>
+
+
+					<input type="button" class="button" value="Generate Minions" id="generate" onclick="generateCritters();" >
+					<textarea value="" id="resultArea" class="inputArea" rows="20" cols="55" ></textarea>
+			</form>
+			
+		</div>
+			
+          </div>
+        <script src="res/script.js">
+        </script>
+        </body>
+      </html>
+
+
+     
