@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<title>Fudge Dice Roller for Extra</title>
+		<link rel="stylesheet" href="res/stylesExtra.css">
+	</head>
+	<body>
+		<div id="main">
+			<h1>Minion Machine Plus</h1>
+			<form id="initiativeForm" action="">
+				<label class="resultAreaInitiativeLabel">Initiative</label>
+				<input type="text" value="" id="resultAreaInitiative" class="result" readonly="readonly">
+				<input class="button" type="button" value="Roll Initivative" onclick="rollInitiative();">
+          </form>  
+        <form id="fudgeDiceForm" action="">
+            <label class="resultAreaDiceLabel">Fudge Dice</label>
+            <input type="text" value="" id="resultAreaDice" class="result" readonly="readonly">
+            <input type="text" value="" id="resultAreaTotal" class="result" readonly="readonly">
+            <input class="button" type="button" value="Roll 4dF" onclick="roll();">
+        </form>
+		<form id="encounterForm" action="" >
+			<label>Number of Players</label>
+				<select id="numberBH" class="select">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4"selected="selected" >4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+
+				
+					<label>Difficulty Setting</label>
+					<select id="difficultySetting" class="select">
+						<option value=75 >Easy</option>
+						<option value=100 selected="selected">Normal</option>
+						<option value=125 >Hard</option>
+					</select>
+	
+	
+				<label>Minion Type</label>
+					<select id="critterName" class="select">
+						<option value="0">Random</option>
+						<option value="1">Iron Overlord Gang</option>
+						<option value="2">Aztec Renaissances</option>
+						<option value="3">The Skull Society</option>
+						<option value="4">The Clay People</option>
+						<option value="5">The Braniacs</option>
+						<option value="6">Cyborg Raiders</option>
+						<option value="7">Feral Robots</option>
+						<option value="8">Outlaw Desperados</option>
+						<option value="9">US Army Sterilizer Unit</option>
+						<option value="10">Grand Nuclear Family Militants</option>
+						<option value="11">Hungry Desert Bloodstalkers</option>
+						<option value="12">Toxic Zombies</option>
+						<option value="13">Rad Dogs</option>
+						<option value="14">Atomic Scorpions</option>
+						<option value="15">Psi Roaches</option>
+						<option value="16">Giant Radioactive Lizards</option>
+						<option value="17">Killer Mutant Turkey</option>
+						<option value="18">Primitive scavengers</option>
+						<option value="19">Monster Bat</option>
+						<option value="20">The Motomaniacs</option>
+						<option value="21">Rogue Bounty Hunters</option>
+						<option value="22">Highway Pirates</option>
+						<option value="23">The Peacekeepers</option>
+					</select>
+
+					<label>Custom Minion Name</label>
+					<input type="text" class="inputText" id="customName" value="">
+					<label>Custom Minion Details</label>
+					<input type="text" class="inputText" id="customDetails" value="">
+
+
+					<input type="button" class="button" value="Generate Critters" id="generate" onclick="generateCritters();" >
+					<input type="button" class="button" value="Clear Custom Data" id="clear" onclick="customClear();" >
+					<textarea value="" id="resultArea" class="inputArea" rows="20" cols="55" ></textarea>
+			</form>
+			
+		</div>
+			
+          </div>
+        <script src="res/scriptExtra.js">
+        </script>
+        </body>
+      </html>
+
+
+     
