@@ -19,7 +19,7 @@
 
 		#main h1 {
 			font-size: 2.0em;
-			font-weight: normal;
+			font-weight: bold;
 			
 		} 
 		#main input.result{
@@ -39,7 +39,7 @@
 
 		#main #resultAreaDice{
 		 width: 80px;
-		 margin-right: 15px;
+		 margin-right: 10px;
 		display: inline-block; 
 		}
 
@@ -47,6 +47,11 @@
 			font-size: 3.0em;
 			color: #999;
 		}	
+
+		#main div.difficulty {
+			margin-top: 10px;
+			
+		}
 
 		#main #resultAreaInitiative {
 			width: 50px;
@@ -140,15 +145,14 @@
 					<option value="10">10</option>
 				</select>
 
-				
+				<div class="difficulty">
 					<label>Difficulty</label>
 					<select id="difficultySetting" class="select">
 						<option value=75 >Easy</option>
 						<option value=100 selected="selected">Normal</option>
 						<option value=125 >Hard</option>
 					</select>
-
-
+				</div>
 					<input type="button" class="button" value="Generate Minions" id="generate" onclick="generateCritters();" >
 					<textarea value="" id="resultArea" class="inputArea" rows="20" cols="55" ></textarea>
 			</form>

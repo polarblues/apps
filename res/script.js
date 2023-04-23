@@ -47,7 +47,7 @@
 		{
 			sp = getStressPoints();
 			cr = getCritterRating();
-			encounter = encounter + "A "+cr+" minion with "+sp+" Hit Points\n";
+			encounter = encounter + "A "+cr+" minion\n with "+sp+" Hit Points\n";
 		}
 		document.getElementById("resultArea").value=encounter;
 	}
