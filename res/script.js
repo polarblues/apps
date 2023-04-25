@@ -30,18 +30,14 @@
         rollVal = Math.round(Math.random()*2)-1;
         return rollVal;
       }
-	  
 	 // Minion Machine JS
 	var critter = new Array();
-
+                  
 	function generateCritters(){
-
-		var draw = getDraw();
+		var draw =getDraw();
 		var sp = "";
 		var cr = "";
 		var cn = "";
-		
-
 		var encounter = "\nMinions In This Encounter\n";
 		for (var d = 0; d < draw; d++)
 		{
@@ -53,45 +49,64 @@
 	}
 
 	function getDraw() {
-
 	// This function determines how many critters to generate per encounter.
-	// The base is 1 per player. Easy encounter will have 25% less critters,
-	// and Hard encounters will have 25% more. And extra randomiser
-	// is applied that my further increase or decrease the number of critters drawn.
-
 		var numSel = document.getElementById("numberBH").selectedIndex;
 		var numOpt = document.getElementById("numberBH").options;
-		var dfSel = document.getElementById("difficultySetting").selectedIndex;
-		var dfOpt = document.getElementById("difficultySetting").options;
 		var numberBH = numOpt[numSel].value;
-		var ratio = (dfOpt[dfSel].value)/100;
-		var extra = numberBH/3;
-		var add = ( Math.round(Math.random()* extra) - Math.round(Math.random()* extra)) * Math.round(Math.random()*1)
-		var numbersEncountered = numberBH * ratio + add;
-		return Math.round(numbersEncountered);
+		var minionCnt = numberBH;
+		if (numberBH == 1){
+			minionCnt=Number(minionCnt)+(Math.round(Math.random()*1));
+		}
+		if (numberBH == 2){
+			minionCnt=Number(minionCnt)+(Math.round(Math.random()*1));
+		}
+		if (numberBH == 3){
+			minionCnt=Number(minionCnt)+(Math.round(Math.random()*3)-1);
+		}
+		if (numberBH == 4){
+			minionCnt=Number(minionCnt)+(Math.round(Math.random()*3)-1);
+		}
+		if (numberBH == 5){
+			minionCnt=Number(minionCnt)+(Math.round(Math.random()*3)-1);
+		}
+		if (numberBH == 6){
+			minionCnt=Number(minionCnt)+(Math.round(Math.random()*3)-1);
+		}
+
+		return minionCnt;
 	}
 
+	
 	function getStressPoints(){
 		var roll=Math.round(Math.random()*5)+1;
 		return roll;
 	}
 
 	function getCritterRating(){
-		var roll=Math.round(Math.random()*100)+1;
+		var dfOpt = document.getElementById("difficultySetting").options;
+		var dfSel = document.getElementById("difficultySetting").selectedIndex;
+		var adjustment = (dfOpt[dfSel].value);
+	
+	/*
+  Rank Ranges Med= 10 Fair  = 30 Good = 70, Great = 80, Superb = 90 
+  Easy = -10, Normal = 0, Hard = +10
+*/
+		var tempRoll=(Math.round(Math.random()*100)+1);
+		var roll = Number(tempRoll) +Number(adjustment);
 		var cr = "";
-		if (roll <= 18) {
+		if (roll <= 10) {
 			cr = "MEDIOCRE (Green)";
 		}
-		if (roll > 18 && roll <= 44) {
+		if (roll > 10 && roll <= 30) {
 			cr = "FAIR (Blue)";
 		}
-		if (roll > 44 && roll <= 62) {
+		if (roll > 30 && roll <= 70) {
 			cr = "GOOD (White)";
 		}
-		if (roll > 62 && roll <= 80) {
+		if (roll > 70 && roll <= 90) {
 			cr = "GREAT (Yellow)";
 		}
-		if (roll > 80) {
+		if (roll > 90) {
 			cr = "SUPERB (Red)";
 		}
 		return cr;
