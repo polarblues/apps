@@ -1,5 +1,5 @@
 	function rollInitiative(){
-		rollVal = Math.round(Math.random()*6)+1;
+		rollVal = Math.floor(Math.random()*6)+1;
 	    document.getElementById("resultAreaInitiative").value=rollVal;
 	}
 
