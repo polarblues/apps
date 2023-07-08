@@ -1,7 +1,20 @@
 	function rollInitiative(){
+		 
+		 
+		 
 		rollVal = Math.floor(Math.random()*6)+1;
 	    document.getElementById("resultAreaInitiative").value=rollVal;
 	}
+	
+	function clearAll(){
+		console.log("Clear All");
+		 document.getElementById("resultAreaInitiative").value=" ";
+		 document.getElementById("resultAreaDice").value=" ";
+		 document.getElementById("resultAreaTotal").value=" ";
+		 document.getElementById("resultArea").value=" ";
+	
+	}
+	
 
       function roll(){
         var sp = "";

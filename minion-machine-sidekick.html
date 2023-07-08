@@ -117,7 +117,7 @@
 	</head>
 	<body>
 		<div id="main">
-		<h1>Polar Fudge Sidekick</h1>
+		<h1>Polar Fudge Sidekick BOB</h1>
 			<form id="initiativeForm" action="">
 				<input class="button" type="button" value="Roll D6" onclick="rollInitiative();">
 				<input type="text" value="" id="resultAreaInitiative" class="result" readonly="readonly">
@@ -148,11 +148,11 @@
 				<div class="difficulty">
 					<label>Difficulty</label>
 					<select id="difficultySetting" class="select">
-						<option value=-10 >Easy</option>
-						<option value=0 selected="selected">Normal</option>
+						<option value=-10 selected="selected">Normal</option>
 						<option value=10 >Hard</option>
 					</select>
-				</div>
+				</div>                                                                                                               
+				<input type="button" class="button" value="Clear" id="clearAll" onclick="clearAll();" >
 					<input type="button" class="button" value="Generate Minions" id="generate" onclick="generateCritters();" >
 					<textarea value="" id="resultArea" class="inputArea" rows="20" cols="55" ></textarea>
 			</form>
