@@ -67,6 +67,9 @@
 		var numOpt = document.getElementById("numberBH").options;
 		var numberBH = numOpt[numSel].value;
 		var minionCnt = numberBH;
+			if (numberBH == 0){
+			minionCnt= 1;
+		}
 		if (numberBH == 1){
 			minionCnt=Number(minionCnt)+(Math.round(Math.random()*1));
 		}
